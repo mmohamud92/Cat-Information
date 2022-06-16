@@ -11,7 +11,7 @@ I made a simple wireframe on figma to help direct how I would make the applicati
 
 ## How it looks:
 
-![data retrieved from cat api](https://github.com/codewithmohamed/Cat-Information/blob/main/How%20it%20looks.png?raw=true)
+![data retrieved from cat api](https://github.com/codewithmohamed/Cat-Information/blob/main/Page%20showing%20cat%20data.png?raw=true)
 
 
 In the project directory, you can run:
