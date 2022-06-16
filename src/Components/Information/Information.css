@@ -1,0 +1,24 @@
+.box {
+    border-radius: 1.25rem;
+    width: 85vw;
+    height: 45vh;
+    border: 0.125rem solid #000;
+    display: flex;
+    flex-direction: column;
+    }
+
+.detail {
+    width: 85%;
+    padding-left: 3.125rem;
+    margin-top: 0.938rem;
+}
+
+.description {
+    width: 85%;
+    padding-left: 3.125rem;
+    padding-top: 0.5rem;
+}
+
+.bold {
+    font-weight: bold;
+}
