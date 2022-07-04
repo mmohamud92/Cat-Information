@@ -29,16 +29,17 @@ function App() {
     for (let i = 0; i < data.length; i++) {
       const catName = data[i].name;
       const catID = data[i].id;
-      catNames.push(catName);
-      catObject[catName] = catID;
+      catNames.push(catName); // making an array of cat names provided by the API so that the user can select from a list of cats
+      catObject[catName] = catID; // making a hashmap of the cat name with the corresponding cat ID
     }
-    setCatBreeds(catNames);
+    setCatBreeds(catNames); // catBreeds is a list of all the cat breeds - to be used in dropdown
     setCatDetails(catObject);
   }
 
-  async function getCatDetails(value) {
+  async function getCatDetails(cat) {
+    //
     const response = await fetch(
-      `https://api.thecatapi.com/v1/images/search?breed_ids=${value}`,
+      `https://api.thecatapi.com/v1/images/search?breed_ids=${cat}`,
       {
         method: "GET",
         withCredentials: true,
@@ -56,19 +57,22 @@ function App() {
   }
 
   useEffect(() => {
-    getCatDetails(catDetails[value]);
+    // when value changes, run getCatDetails
+    getCatDetails(catDetails[value]); // with the cat ID from the hashmap created
     console.log(value);
   }, [value]);
 
   useEffect(() => {
+    // get cat breeds on initial render of page
     getCatBreeds();
   }, []);
 
   const handleChange = (e) => {
+    // select the value of the dropdowm option selected
     setValue(e.value);
   };
 
-  const defaultOption = "select your cat breed!";
+  const defaultOption = "select your cat breed!"; // default option on render
   const options = catBreeds;
   return (
     <div>
@@ -87,7 +91,7 @@ function App() {
         <div>{value}</div>
       </div>
       <div className="box-container">
-      <Information catData={catData} />
+        <Information catData={catData} />
       </div>
     </div>
   );
